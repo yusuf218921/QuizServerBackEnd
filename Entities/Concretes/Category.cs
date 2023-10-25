@@ -1,4 +1,4 @@
-﻿using DataAccess.Entities.Abstracts;
+﻿using Core.Entities.Abstracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;

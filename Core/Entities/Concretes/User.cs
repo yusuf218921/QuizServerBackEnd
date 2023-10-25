@@ -1,11 +1,11 @@
-﻿using DataAccess.Entities.Abstracts;
+﻿using Core.Entities.Abstracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Entities.Concretes
+namespace Core.Entities.Concretes
 {
     public class User : IEntity
     {

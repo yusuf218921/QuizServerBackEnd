@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Entities.Abstracts
+namespace DataAccess.Abstracts
 {
-    internal class IDto
+    public interface IUserDal
     {
+
     }
 }
