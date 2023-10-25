@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concretes
 {
-    internal class EfTotalScoreDal : EfEntityRepositoryBase<TotalScore, QuizContext>, ICategoryDal
+    public class EfTotalScoreDal : EfEntityRepositoryBase<TotalScore, QuizContext>, ITotalScoreDal
     {
     }
 }
