@@ -13,7 +13,7 @@ namespace DataAccess.Concretes
 {
     public class EfTotalScoreDal : EfEntityRepositoryBase<TotalScore, QuizContext>, ITotalScoreDal
     {
-        public List<TotalScoreDto> getAllScore()
+        public List<TotalScoreDto> GetAllScore()
         {
             using (var context = new QuizContext())
             {

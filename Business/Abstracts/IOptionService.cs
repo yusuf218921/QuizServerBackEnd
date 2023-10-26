@@ -10,6 +10,6 @@ namespace Business.Abstracts
 {
     public interface IOptionService
     {
-        IDataResult<List<Option>> getQuestionOptions(int questionId);
+        IDataResult<List<Option>> GetQuestionOptions(int questionId);
     }
 }

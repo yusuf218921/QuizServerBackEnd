@@ -1,4 +1,6 @@
-﻿using Entities.DTOs;
+﻿using Core.DataAccess;
+using Entities.Concretes;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstracts
 {
-    public interface ITotalScoreDal
+    public interface ITotalScoreDal : IEntityRepository<TotalScore>
     {
-        List<TotalScoreDto> getAllScore();
+        List<TotalScoreDto> GetAllScore();
 
     }
 }

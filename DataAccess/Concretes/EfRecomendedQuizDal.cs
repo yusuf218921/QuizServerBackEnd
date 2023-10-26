@@ -14,7 +14,7 @@ namespace DataAccess.Concretes
 {
     public class EfRecomendedQuizDal : EfEntityRepositoryBase<RecomendedQuiz, QuizContext>, IRecomendedQuizDal
     {
-        public List<RecomendedQuizDto> getAll()
+        public List<RecomendedQuizDto> GetAllQuiz()
         {
             using (var context = new QuizContext())
             {

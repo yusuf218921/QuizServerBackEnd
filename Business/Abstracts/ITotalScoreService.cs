@@ -11,7 +11,7 @@ namespace Business.Abstracts
 {
     public interface ITotalScoreService
     {
-        IDataResult<List<TotalScoreDto>> getAllScore();
-        IDataResult<TotalScore> getTotalScoreByUserId(int userId);
+        IDataResult<List<TotalScoreDto>> GetAllScore();
+        IDataResult<TotalScore> GetTotalScoreByUserId(int userId);
     }
 }

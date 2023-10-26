@@ -11,7 +11,7 @@ namespace Business.Abstracts
 {
     public interface IRecomendedQuizService
     {
-        IDataResult<List<RecomendedQuizDto>> getAllQuiz();
-        IDataResult<RecomendedQuiz> getQuiz(int id);
+        IDataResult<List<RecomendedQuizDto>> GetAllQuiz();
+        IDataResult<RecomendedQuiz> GetQuiz(int id);
     }
 }

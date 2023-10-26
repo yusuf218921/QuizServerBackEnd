@@ -10,8 +10,8 @@ namespace Business.Abstracts
 {
     public interface IQuizScoreService
     {
-        IDataResult<List<QuizScore>> getAllQuizScoreByQuizId(int quizId);
-        IDataResult<QuizScore> getQuizScore(int quizScoreId);
-        IDataResult<List<QuizScore>> getAllQuizScoreByUserId(int userId);
+        IDataResult<List<QuizScore>> GetAllQuizScoreByQuizId(int quizId);
+        IDataResult<QuizScore> GetQuizScore(int quizScoreId);
+        IDataResult<List<QuizScore>> GetAllQuizScoreByUserId(int userId);
     }
 }

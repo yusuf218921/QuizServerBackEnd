@@ -8,7 +8,7 @@ namespace Entities.DTOs
 {
     public class RecomendedQuizDto
     {
-        public string RecomendedQuizID { get; set; }
+        public int RecomendedQuizID { get; set; }
         public string QuizName { get; set; }
     }
 }
