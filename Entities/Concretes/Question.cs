@@ -14,6 +14,6 @@ namespace Entities.Concretes
         public string Text { get; set; }
         public string Answer { get; set; }
         public int Time { get; set; }
-        public byte Status { get; set; }
+        public bool Status { get; set; }
     }
 }

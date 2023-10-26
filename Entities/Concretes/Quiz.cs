@@ -12,6 +12,6 @@ namespace Entities.Concretes
         public int QuizID { get; set; }
         public int CategoryID { get; set; }
         public string QuizName { get; set; }
-        public byte Status { get; set; }
+        public bool Status { get; set; }
     }
 }

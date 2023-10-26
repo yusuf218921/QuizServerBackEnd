@@ -14,7 +14,7 @@ namespace Business.Concretes
     public class OptionManager : IOptionService
     {
         IOptionDal _optionDal;
-        OptionManager(IOptionDal optionDal)
+        public OptionManager(IOptionDal optionDal)
         {
             _optionDal = optionDal;
         }

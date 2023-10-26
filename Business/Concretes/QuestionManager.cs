@@ -14,7 +14,7 @@ namespace Business.Concretes
     public class QuestionManager : IQuestionService
     {
         IQuestionDal _questionDal;
-        QuestionManager(IQuestionDal questionDal)
+        public QuestionManager(IQuestionDal questionDal)
         {
             _questionDal = questionDal;
         }

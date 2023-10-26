@@ -14,7 +14,7 @@ namespace Business.Concretes
     public class QuizManager : IQuizService
     {
         IQuizDal _quizDal;
-        QuizManager(IQuizDal quizDal)
+        public QuizManager(IQuizDal quizDal)
         {
             _quizDal = quizDal;
         }
@@ -26,7 +26,7 @@ namespace Business.Concretes
 
         public IDataResult<List<Quiz>> GetAllQuizByCategoryId(int categoryId)
         {
-            return new SuccessDataResult<List<Quiz>>(_quizDal.GetAll(q => q.CategoryID == categoryId).ToList());
+            return new SuccessDataResult<List<Quiz>>(_quizDal.GetAll(q => q.CategoryID == categoryId && q.Status == true).ToList());
         }
 
         public IDataResult<Quiz> getQuizById(int quizId)

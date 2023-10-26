@@ -14,7 +14,7 @@ namespace Business.Concretes
     public class QuizScoreManager : IQuizScoreService
     {
         IQuizScoreDal _quizScoreDal;
-        QuizScoreManager(IQuizScoreDal quizScoreDal)
+        public QuizScoreManager(IQuizScoreDal quizScoreDal)
         {
             _quizScoreDal = quizScoreDal;
         }
