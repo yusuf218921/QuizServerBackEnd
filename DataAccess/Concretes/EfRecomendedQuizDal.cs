@@ -24,7 +24,8 @@ namespace DataAccess.Concretes
                              select new RecomendedQuizDto
                              {
                                  RecomendedQuizID = r.RecomendedQuizID,
-                                 QuizName = q.QuizName
+                                 QuizName = q.QuizName,
+                                 QuizImgUrl = q.QuizImgUrl
                              };
                 return result.ToList();
             }

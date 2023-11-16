@@ -6,7 +6,7 @@ namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TotalScoresController : ControllerBase
+    public class TotalScoresController : Controller
     {
         ITotalScoreService _totalScoreService;
         public TotalScoresController(ITotalScoreService totalScoreService)
@@ -26,7 +26,7 @@ namespace WebApi.Controllers
             return Ok(result.Data);
         }
 
-        [HttpGet("getalltotalscores")]
+        [HttpGet("gettotalscoresbyid")]
         public ActionResult GetTotalScoreByUserId(int userId)
         {
             var result = _totalScoreService.GetTotalScoreByUserId(userId);

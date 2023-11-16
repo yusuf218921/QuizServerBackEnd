@@ -6,7 +6,7 @@ namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class OptionsController : ControllerBase
+    public class OptionsController : Controller
     {
         IOptionService _optionService;
 

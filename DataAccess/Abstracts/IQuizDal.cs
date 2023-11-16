@@ -10,5 +10,6 @@ namespace DataAccess.Abstracts
 {
     public interface IQuizDal : IEntityRepository<Quiz>
     {
+        public List<Quiz> GetQuizzesWithPage(int page, int pageSize);
     }
 }

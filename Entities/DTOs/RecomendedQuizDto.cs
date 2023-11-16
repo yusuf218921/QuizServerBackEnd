@@ -10,5 +10,6 @@ namespace Entities.DTOs
     {
         public int RecomendedQuizID { get; set; }
         public string QuizName { get; set; }
+        public string QuizImgUrl { get; set; }
     }
 }

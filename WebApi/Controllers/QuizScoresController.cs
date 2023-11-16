@@ -7,7 +7,7 @@ namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class QuizScoresController : ControllerBase
+    public class QuizScoresController : Controller
     {
         IQuizScoreService _quizScoreService;
 

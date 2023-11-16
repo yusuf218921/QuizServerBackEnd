@@ -7,13 +7,25 @@ namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class QuizzesController : ControllerBase
+    public class QuizzesController : Controller
     {
         IQuizService _quizService;
 
         public QuizzesController(IQuizService quizService)
         {
             _quizService = quizService;
+        }
+
+        [HttpGet("getallquizzeswithpage")]
+        public ActionResult GetAllQuizWithPage(int page,int pageSize)
+        {
+            var result = _quizService.GetQuizWithPage(page, pageSize);
+            if (!result.Success)
+            {
+                return BadRequest(result.Message);
+            }
+
+            return Ok(result.Data);
         }
         [HttpGet("getallquiz")]
         public ActionResult GetAllQuiz()

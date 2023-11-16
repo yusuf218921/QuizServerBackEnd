@@ -13,5 +13,6 @@ namespace Business.Abstracts
         IDataResult<List<Quiz>> GetAllQuiz();
         IDataResult<List<Quiz>> GetAllQuizByCategoryId(int categoryId);
         IDataResult<Quiz> getQuizById(int quizId);
+        IDataResult<List<Quiz>> GetQuizWithPage(int page,int pageSize);
     }
 }

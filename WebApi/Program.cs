@@ -1,4 +1,5 @@
 using Autofac;
+using Autofac.Core;
 using Autofac.Extensions.DependencyInjection;
 using Business.DependencyRevolvers.Autofac;
 using Core.DependencyResolvers;
@@ -15,11 +16,21 @@ namespace WebAPI
     {
         public static void Main(string[] args)
         {
+            
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
 
+            
+
             builder.Services.AddControllers();
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin",
+                    builder => builder.WithOrigins("http://localhost:3000")
+                                      .AllowAnyMethod()
+                                      .AllowAnyHeader());
+            });
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             var tokenOptions = builder.Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
@@ -61,6 +72,9 @@ namespace WebAPI
                 {
                     builder.RegisterModule(new AutofacBusinessModule());
                 });
+            
+            
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -75,8 +89,10 @@ namespace WebAPI
             app.UseAuthorization();
             app.UseAuthentication();
             app.UseRouting();
+            app.UseCors("AllowSpecificOrigin");
 
             app.MapControllers();
+            
 
             app.Run();
         }

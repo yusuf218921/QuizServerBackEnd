@@ -6,7 +6,7 @@ namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RecomendedQuizzesController : ControllerBase
+    public class RecomendedQuizzesController : Controller
     {
         IRecomendedQuizService _recomendedQuizService;
 
@@ -23,6 +23,8 @@ namespace WebApi.Controllers
             {
                 return BadRequest(result.Message);
             }
+
+            //Response.Headers.Add("Access-Control-Allow-Origin", "http://localhost:3000");
 
             return Ok(result.Data);
         }
