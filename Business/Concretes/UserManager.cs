@@ -26,11 +26,14 @@ namespace Business.Concretes
             return new SuccessResult();
         }
 
-        public IDataResult<User> GetByMail(string email)
+        public IDataResult<User> GetByMailOrUserName(string email, string username)
         {
-            return new SuccessDataResult<User>(_userDal.Get(u => u.Email == email));
+            return new SuccessDataResult<User>(_userDal.Get(u => u.Email == email || u.Username== username));
         }
 
-
+        public IDataResult<User> GetByMail(string email)
+        {
+            return new SuccessDataResult<User>(_userDal.Get(u=> u.Email== email));
+        }
     }
 }

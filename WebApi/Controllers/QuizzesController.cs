@@ -62,5 +62,21 @@ namespace WebApi.Controllers
 
             return Ok(result.Data);
         }
+
+        [HttpGet("getquizwithpagebycategoryid")]
+        public ActionResult GetQuizByCategoryWithPage(int categoryId, int page = 1, int pageSize = 5)
+        {
+            var result = _quizService.GetAllQuizByCategoryId(categoryId);
+            if (!result.Success)
+                return BadRequest(result.Message);
+
+            var totalCount = result.Data.Count;
+            var totalPages = (int)Math.Ceiling((decimal)totalCount / pageSize);
+            var quizzesPerPage = result
+                .Data.Skip((page - 1) * pageSize)
+                .Take(pageSize);
+
+            return Ok(quizzesPerPage);
+        }
     }
 }

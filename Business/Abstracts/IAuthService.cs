@@ -9,7 +9,7 @@ namespace Business.Abstracts
     {
         IDataResult<User> Register(UserForRegisterDto userForRegisterDto, string password);
         IDataResult<User> Login(UserForLoginDto userForLoginDto);
-        IResult UserExists(string email);
+        IResult UserExists(string email, string username);
         IDataResult<AccessToken> CreateAccessToken(User user);
     }
 }

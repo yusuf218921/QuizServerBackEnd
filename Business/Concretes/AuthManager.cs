@@ -52,9 +52,9 @@ namespace Business.Concretes
             return new SuccessDataResult<User>(userToCheck.Data, Messages.SuccessfulLogin);
         }
 
-        public IResult UserExists(string email)
+        public IResult UserExists(string email,string username)
         {
-            if (_userService.GetByMail(email).Data != null)
+            if (_userService.GetByMailOrUserName(email,username).Data != null)
             {
                 return new ErrorResult(Messages.UserAlreadyExists);
             }
