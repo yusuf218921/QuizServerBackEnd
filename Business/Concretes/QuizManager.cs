@@ -29,7 +29,7 @@ namespace Business.Concretes
         {
             return new SuccessDataResult<List<Quiz>>(_quizDal.GetAll(q => q.CategoryID == categoryId && q.Status == true).ToList());
         }
-        [SecuredOperation("user")]
+
         public IDataResult<Quiz> getQuizById(int quizId)
         {
             return new SuccessDataResult<Quiz>(_quizDal.Get(q => q.QuizID == quizId));

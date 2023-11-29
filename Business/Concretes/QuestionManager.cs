@@ -3,6 +3,7 @@ using Core.Utilities.Result;
 using Core.Utilities.Results;
 using DataAccess.Abstracts;
 using Entities.Concretes;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,9 +19,16 @@ namespace Business.Concretes
         {
             _questionDal = questionDal;
         }
+
+        public IDataResult<List<QuestionDto>> GetQuizQuestionDto(int quizId)
+        {
+            return new SuccessDataResult<List<QuestionDto>>(_questionDal.GetAllQuestionDto(quizId));
+        }
+
         public IDataResult<List<Question>> GetQuizQuestions(int quizId)
         {
             return new SuccessDataResult<List<Question>>(_questionDal.GetAll(q => q.QuizID == quizId).ToList());
         }
+
     }
 }

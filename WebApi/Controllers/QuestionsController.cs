@@ -27,5 +27,16 @@ namespace WebApi.Controllers
 
             return Ok(result.Data);
         }
+        [HttpGet("getquestiondtos")]
+        public ActionResult GetQuestionDto(int quizId)
+        {
+            var result = _questionService.GetQuizQuestionDto(quizId);
+            if (!result.Success)
+            {
+                return BadRequest(result.Message);
+            }
+
+            return Ok(result.Data);
+        }
     }
 }
