@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core.Entities.Abstracts
 {
+    // DB tabloları için arayüz
     public interface IEntity
     {
     }

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Business.Abstracts
 {
+    // Option Servisleri
     public interface IOptionService
     {
         IDataResult<List<Option>> GetQuestionOptions(int questionId);

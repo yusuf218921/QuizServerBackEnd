@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Business.Abstracts
 {
+    // QuizScore Servisleri
     public interface IQuizScoreService
     {
         IDataResult<List<QuizScore>> GetAllQuizScoreByQuizId(int quizId);

@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concretes
 {
+    //EntityFramework kullanılarak QuizScore için db sorgularını implemente eden sınıf,
+    //RepositoryBase sınıfını implemente ediyor
+    //Generic bir sınıf
     public class EfQuizScoreDal : EfEntityRepositoryBase<QuizScore, QuizContext>, IQuizScoreDal
     {
     }

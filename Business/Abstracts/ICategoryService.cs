@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Business.Abstracts
 {
+    // Category Servisleri
     public interface ICategoryService
     {
         IDataResult<Category> GetCategory(int id);

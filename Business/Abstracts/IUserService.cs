@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Business.Abstracts
 {
+    // User Servisleri
     public interface IUserService
     {
         IDataResult<List<OperationClaim>> GetClaims(User user);

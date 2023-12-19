@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Business.Constants
 {
+    // Hata Mesajları
     public class Messages
     {
         public static string LoginError = "E-mail veya şifre hatalı";

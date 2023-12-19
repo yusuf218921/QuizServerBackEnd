@@ -6,6 +6,7 @@ namespace Core.DependencyResolvers
 {
     public class CoreModule : ICoreModule
     {
+        // IHttpContextAccessor istenirse HttpContextAccessor sınıfını oluştur
         public void Load(IServiceCollection services)
         {
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();

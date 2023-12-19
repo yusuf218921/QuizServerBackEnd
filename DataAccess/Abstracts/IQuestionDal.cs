@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstracts
 {
+    // Question tablosunda db sorguları için arayüz
     public interface IQuestionDal : IEntityRepository<Question>
     {
         List<QuestionDto> GetAllQuestionDto(int quizId);

@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Core.Extensions
 {
+    //Service Collection sınıfı için genişletme
     public static class ServiceCollectionExtensions
     {
         public static IServiceCollection AddDependencyResolvers(this IServiceCollection services,

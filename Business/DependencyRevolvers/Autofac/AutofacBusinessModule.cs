@@ -11,10 +11,12 @@ using DataAccess.Concretes;
 
 namespace Business.DependencyRevolvers.Autofac
 {
+    // Autofac Kullanılarak sınıfları newlemeden kullanmak için IoC
     public class AutofacBusinessModule : Module
     {
         protected override void Load(ContainerBuilder builder)
         {
+            // İstenilen referansa göre bir sınıf oluşturuyor
 
             builder.RegisterType<OptionManager>().As<IOptionService>();
             builder.RegisterType<EfOptionDal>().As<IOptionDal>();

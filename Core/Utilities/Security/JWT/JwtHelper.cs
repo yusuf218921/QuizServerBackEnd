@@ -8,6 +8,7 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace Core.Utilities.Security.Jwt
 {
+    // Json Web Token Oluşturmak için helper
     public partial class JwtHelper : ITokenHelper
     {
         public IConfiguration _configuration { get; }

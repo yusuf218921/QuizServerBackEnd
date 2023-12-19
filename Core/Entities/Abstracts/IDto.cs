@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core.Entities.Abstracts
 {
+    // Dto diğer adıyla modeller için arayüz
     public interface IDto
     {
     }

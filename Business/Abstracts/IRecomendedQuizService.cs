@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Business.Abstracts
 {
+    // RecomendedQuiz Servisleri
     public interface IRecomendedQuizService
     {
         IDataResult<List<RecomendedQuizDto>> GetAllQuiz();

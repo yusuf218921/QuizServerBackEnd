@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entities.Concretes
 {
+    //Recomended Quiz Tablosu
     public class RecomendedQuiz : IEntity
     {
         public int RecomendedQuizID { get; set; }

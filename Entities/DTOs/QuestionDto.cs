@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Entities.DTOs
 {
+    // Sorular için model
     public class QuestionDto : IDto
     {
         public int QuestionID { get; set; }

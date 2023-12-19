@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entities.DTOs
 {
+    //Toplam skor için model
     public class TotalScoreDto : IDto
     {
         public int TotalScoreID { get; set; }

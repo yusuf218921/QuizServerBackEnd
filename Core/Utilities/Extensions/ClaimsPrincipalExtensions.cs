@@ -6,6 +6,7 @@ using System.Text;
 
 namespace Core.Extensions
 {
+    // ClaimPrincipal sınıfı için genişletme
     public static class ClaimsPrincipalExtensions
     {
         public static List<string> Claims(this ClaimsPrincipal claimsPrincipal, string claimType)

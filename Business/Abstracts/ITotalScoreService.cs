@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Business.Abstracts
 {
+    // TotalScore Servisleri
     public interface ITotalScoreService
     {
         IDataResult<List<TotalScoreDto>> GetAllScore();

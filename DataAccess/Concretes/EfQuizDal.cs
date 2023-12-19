@@ -12,10 +12,14 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concretes
 {
+    //EntityFramework kullanılarak Quiz için db sorgularını implemente eden sınıf,
+    //RepositoryBase sınıfını implemente ediyor
+    //Generic bir sınıf
     public class EfQuizDal : EfEntityRepositoryBase<Quiz, QuizContext>, IQuizDal
     {
         public List<Quiz> GetQuizzesWithPage(int page, int pageSize)
         {
+            //Tek seferde bütün quizleri getirmek yerine sayfa sayfa getirmesini sağlamak için yazılmış metod
             using (var context = new QuizContext())
             {
                 var quizzes = context.Quizzes

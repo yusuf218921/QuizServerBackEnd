@@ -9,8 +9,10 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstracts
 {
+    // RecomendedQuiz tablosunda db sorguları için arayüz
     public interface IRecomendedQuizDal : IEntityRepository<RecomendedQuiz>
     {
+        // RecomendedQuiz için Model oluşturan metod
         List<RecomendedQuizDto> GetAllQuiz();
     }
 }

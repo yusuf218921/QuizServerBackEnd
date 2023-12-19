@@ -10,8 +10,10 @@ namespace Business.ValidationRules.FluentValidation
 {
     public class UserValidator : AbstractValidator<User>
     {
+        // Kullanıcı Doğrulama sınıfı
         public UserValidator()
         {
+            // Emailde @ içermesi için bır doğrulama 
             RuleFor(u => u.Email).Must(verify);
         }
 

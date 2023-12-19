@@ -13,8 +13,13 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concretes
 {
+    //EntityFramework kullanılarak Question için db sorgularını implemente eden sınıf,
+    //RepositoryBase sınıfını implemente ediyor
+    //Generic bir sınıf
     public class EfQuestionDal : EfEntityRepositoryBase<Question, QuizContext>, IQuestionDal
     {
+        // Quiz, Question ve Option tablolarının ilişkilerini kullanarak tek bir model oluşturmak için yazılmış metod
+        // 3 tablodaki bilgileri id lerine göre eşleyerek QuestionDto sınıfında birleştiriyor
         public List<QuestionDto> GetAllQuestionDto(int quizId)
         {
             using (var context = new QuizContext())

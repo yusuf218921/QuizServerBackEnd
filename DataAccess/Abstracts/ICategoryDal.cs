@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstracts
 {
+    // Category tablosunda db sorguları için arayüz
     public interface ICategoryDal : IEntityRepository<Category>
         
     {

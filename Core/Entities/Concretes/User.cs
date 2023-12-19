@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Core.Entities.Concretes
 {
+    // Kullanıcı Tablosu 
     public class User : IEntity
     {
         public int UserID { get; set; }

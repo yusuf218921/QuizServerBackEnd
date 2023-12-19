@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Business.Abstracts
 {
+    // Quiz Servisleri
     public interface IQuizService
     {
         IDataResult<List<Quiz>> GetAllQuiz();

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entities.Concretes
 {
+    //Total Score Tablosu
     public class TotalScore : IEntity
     {
         public int TotalScoreID { get; set; }

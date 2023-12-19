@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entities.DTOs
 {
+    // Kullanıcılar için kayıt modeli
     public class UserForRegisterDto : IDto
     {
         public string Password { get; set; }

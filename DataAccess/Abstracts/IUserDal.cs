@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstracts
 {
+    //User Tablosunda db sorguları için arayüz
     public interface IUserDal : IEntityRepository<User>
     {
+        //User rollerini çekmek için
         List<OperationClaim> GetClaims(User user);
     }
 }

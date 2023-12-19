@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entities.DTOs
 {
+    //Seçenekler için model
     public class OptionDto
     {
         public string OptionText { get; set; }

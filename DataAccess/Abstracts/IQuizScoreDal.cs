@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstracts
 {
+    // QuizScore tablosunda db sorguları için arayüz
     public interface IQuizScoreDal : IEntityRepository<QuizScore>
     {
     }

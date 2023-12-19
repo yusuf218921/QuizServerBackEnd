@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstracts
 {
+    // Option tablosunda db sorguları için arayüz
     public interface IOptionDal : IEntityRepository<Option>
     {
     }

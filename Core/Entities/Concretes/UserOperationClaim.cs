@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Core.Entities.Concretes
 {
+    // Kullanıcıyla ilişkili rolleri tutan tablo
     public class UserOperationClaim : IEntity
     {
         public int UserOperationClaimID { get; set; }

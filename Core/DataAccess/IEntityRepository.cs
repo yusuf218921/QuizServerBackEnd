@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Core.DataAccess
 {
+    //EntityRepository arayüzü
     public interface IEntityRepository<T> where T : class, IEntity, new()
     {
         void Add(T entity);

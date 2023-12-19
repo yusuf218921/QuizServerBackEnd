@@ -12,8 +12,13 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concretes
 {
+    //EntityFramework kullanılarak RecomendedQuiz için db sorgularını implemente eden sınıf,
+    //RepositoryBase sınıfını implemente ediyor
+    //Generic bir sınıf
     public class EfRecomendedQuizDal : EfEntityRepositoryBase<RecomendedQuiz, QuizContext>, IRecomendedQuizDal
     {
+        // RecomendedQuiz için Quizle olan id ilişkisi sayesinde RecomendedQuizDto sınıfında
+        // birleştirerek yeni bir model oluşturan metod
         public List<RecomendedQuizDto> GetAllQuiz()
         {
             using (var context = new QuizContext())

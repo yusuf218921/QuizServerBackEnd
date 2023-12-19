@@ -2,6 +2,7 @@
 
 namespace Core.Utilities.Interceptors
 {
+    //Aspect Orianted Programming için MethodInterception
     public abstract class MethodInterception : MethodInterceptionBaseAttribute
     {
         protected virtual void OnBefore(IInvocation invocation) { }

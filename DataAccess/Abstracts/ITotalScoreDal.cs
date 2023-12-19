@@ -9,8 +9,10 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstracts
 {
+    // TotalScore tablosunda db sorguları için arayüz
     public interface ITotalScoreDal : IEntityRepository<TotalScore>
     {
+        // Total score için model oluşturan metod
         List<TotalScoreDto> GetAllScore();
 
     }

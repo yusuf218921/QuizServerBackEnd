@@ -6,6 +6,7 @@ using System.Security.Claims;
 using System.Text;
 namespace Core.Utilities.Extensions
 {
+    // Claimler için Genişletme sınıfı ICollection<Claim> sınıfını genişletiyor
     public static class ClaimExtensions
     {
         public static void AddEmail(this ICollection<Claim> claims, string email)

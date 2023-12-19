@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entities.DTOs
 {
+    //Tavsiye Edilen Quizler için bir model
     public class RecomendedQuizDto
     {
         public int RecomendedQuizID { get; set; }

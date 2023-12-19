@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concretes
 {
+    //EntityFramework kullanılarak Category için db sorgularını implemente eden sınıf,
+    //RepositoryBase sınıfını implemente ediyor
+    //Generic bir sınıf
     public class EfCategoryDal : EfEntityRepositoryBase<Category, QuizContext>, ICategoryDal
     {
     }

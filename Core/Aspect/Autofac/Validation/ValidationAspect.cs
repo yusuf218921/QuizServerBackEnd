@@ -6,6 +6,7 @@ using FluentValidation;
 
 namespace Core.Aspects.Autofac.Validation
 {
+    // Validation sınıfı için methodInterception (Aspect Orianted Programming için)
     public class ValidationAspect : MethodInterception
     {
         private Type _validatorType;

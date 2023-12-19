@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entities.Concretes
 {
+    //Question Tablosu
     public class Question : IEntity
     {
         public int QuestionID { get; set; }

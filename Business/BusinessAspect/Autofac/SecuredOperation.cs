@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Business.BusinessAspects.Autofac
 {
+    // Kullanıcı yetkili olup olmadığını anlamak için sınıf AOP olarak çalışıyor (Method Interception)
     public class SecuredOperation : MethodInterception
     {
         private string[] _roles;

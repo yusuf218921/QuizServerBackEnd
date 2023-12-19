@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Business.Abstracts
 {
+    // Quistion Servisleri
     public interface IQuestionService
     {
         IDataResult<List<Question>> GetQuizQuestions(int quizId);

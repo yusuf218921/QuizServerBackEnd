@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstracts
 {
+    // Quiz tablosunda db sorguları için arayüz
     public interface IQuizDal : IEntityRepository<Quiz>
     {
+        // Quizleri Sayfa sayfa getirmek için yazılmış metod implemente eden sınıfta override ediliyor.
         public List<Quiz> GetQuizzesWithPage(int page, int pageSize);
     }
 }

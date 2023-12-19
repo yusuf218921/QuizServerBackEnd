@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entities.DTOs
 {
+    // Kullanıcılar için giriş modeli
     public class UserForLoginDto : IDto
     {
         public string Email { get; set; }

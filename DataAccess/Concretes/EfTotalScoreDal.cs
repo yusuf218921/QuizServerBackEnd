@@ -11,8 +11,12 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concretes
 {
+    //EntityFramework kullanılarak TotalScore için db sorgularını implemente eden sınıf,
+    //RepositoryBase sınıfını implemente ediyor
+    //Generic bir sınıf
     public class EfTotalScoreDal : EfEntityRepositoryBase<TotalScore, QuizContext>, ITotalScoreDal
     {
+        // İlişkili tablolar için join işlemleri
         public List<TotalScoreDto> GetAllScore()
         {
             using (var context = new QuizContext())
