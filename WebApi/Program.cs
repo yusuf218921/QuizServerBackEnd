@@ -24,8 +24,12 @@ namespace WebAPI
             
 
             builder.Services.AddControllers();
+            // QuizFrontEnd'in çalýþtýðý localle baðlantý oluþturmak için
             builder.Services.AddCors(options =>
             {
+                // Bu Bilgisayarda QuizFrontend localhost:3000 portunda çalýþýyor, kendi bilgisayarýnýzda
+                // frontend hangi localde çalýþýyorsa api baðlantýsýnýn düzgün kurulabilmesi için ona göre configüre edin
+                // Örn: localhost:5500 portunda çalýþýyorsa "http://localhost:3000" kýsmýný ona göre düzenleyin
                 options.AddPolicy("AllowSpecificOrigin",
                     builder => builder.WithOrigins("http://localhost:3000")
                                       .AllowAnyMethod()
