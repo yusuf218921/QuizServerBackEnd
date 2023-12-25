@@ -1,4 +1,5 @@
 ﻿using Business.Abstracts;
+using Entities.Concretes;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -36,6 +37,18 @@ namespace WebApi.Controllers
             }
 
             return Ok(result.Data);
+        }
+
+        [HttpPost("addtotalscore")]
+        public ActionResult AddTotalScore(TotalScore totalScore)
+        {
+            var result = _totalScoreService.AddTotalScore(totalScore);
+            if (!result.Success)
+            {
+                return BadRequest(result.Message);
+            }
+
+            return Ok(result.Message);
         }
 
     }

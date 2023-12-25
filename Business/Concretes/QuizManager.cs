@@ -19,6 +19,34 @@ namespace Business.Concretes
         {
             _quizDal = quizDal;
         }
+        [SecuredOperation("admin")]
+        public IResult AddQuiz(Quiz quiz)
+        {
+            try
+            {
+                _quizDal.Add(quiz);
+                return new SuccessResult("Quiz Başarıyla eklendi");
+            }
+            catch(Exception ex)
+            {
+                return new ErrorResult(ex.Message);
+            }
+            
+        }
+        [SecuredOperation("admin")]
+        public IResult DeleteQuiz(Quiz quiz)
+        {
+            try
+            {
+                _quizDal.Delete(quiz);
+                return new SuccessResult("Quiz Başarıyla Silindi");
+            }
+            catch(Exception ex)
+            {
+                return new ErrorResult(ex.Message);
+            }
+            
+        }
 
         public IDataResult<List<Quiz>> GetAllQuiz()
         {
@@ -39,6 +67,12 @@ namespace Business.Concretes
         {
             return new SuccessDataResult<List<Quiz>>(_quizDal.GetQuizzesWithPage(page,pageSize));
             
+        }
+        [SecuredOperation("admin")]
+        public IResult UpdateQuiz(Quiz quiz)
+        {
+            _quizDal.Update(quiz);
+            return new SuccessResult("Quiz Başarıyla Güncellendi");
         }
     }
 }

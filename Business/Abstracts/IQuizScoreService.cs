@@ -11,6 +11,8 @@ namespace Business.Abstracts
     // QuizScore Servisleri
     public interface IQuizScoreService
     {
+        IResult AddQuizScore(QuizScore quizScore);
+        IResult UpdateQuizScore( QuizScore quizScore);
         IDataResult<List<QuizScore>> GetAllQuizScoreByQuizId(int quizId);
         IDataResult<QuizScore> GetQuizScore(int quizScoreId);
         IDataResult<List<QuizScore>> GetAllQuizScoreByUserId(int userId);

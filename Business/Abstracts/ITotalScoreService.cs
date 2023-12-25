@@ -12,6 +12,8 @@ namespace Business.Abstracts
     // TotalScore Servisleri
     public interface ITotalScoreService
     {
+        IResult AddTotalScore(TotalScore totalScore);
+        IResult UpdateTotalScore(TotalScore totalScore);
         IDataResult<List<TotalScoreDto>> GetAllScore();
         IDataResult<TotalScore> GetTotalScoreByUserId(int userId);
     }

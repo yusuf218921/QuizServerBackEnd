@@ -35,6 +35,14 @@ namespace WebAPI
                                       .AllowAnyMethod()
                                       .AllowAnyHeader());
             });
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAnyOrigin",
+                    builder => builder.AllowAnyOrigin()
+                                      .AllowAnyMethod()
+                                      .AllowAnyHeader());
+            });
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             var tokenOptions = builder.Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
@@ -93,7 +101,8 @@ namespace WebAPI
             app.UseAuthorization();
             app.UseAuthentication();
             app.UseRouting();
-            app.UseCors("AllowSpecificOrigin");
+            //app.UseCors("AllowSpecificOrigin");
+            app.UseCors("AllowAnyOrigin");
 
             app.MapControllers();
             

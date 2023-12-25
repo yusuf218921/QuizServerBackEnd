@@ -1,5 +1,6 @@
 ﻿using Business.Abstracts;
 using Core.Utilities.Result;
+using Entities.Concretes;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -77,6 +78,63 @@ namespace WebApi.Controllers
                 .Take(pageSize);
 
             return Ok(quizzesPerPage);
+        }
+
+        [HttpPost("addquiz")]
+        public ActionResult AddQuiz(Quiz quiz)
+        {
+            try
+            {
+                var result = _quizService.AddQuiz(quiz);
+                if (!result.Success)
+                {
+                    return BadRequest(result.Message);
+                }
+
+                return Ok(result.Message);
+            }catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }   
+            
+        }
+
+        [HttpPost("deletequiz")]
+        public ActionResult DeleteQuiz(Quiz quiz)
+        {
+            try
+            {
+                var result = _quizService.DeleteQuiz(quiz);
+                if (!result.Success)
+                {
+                    return BadRequest(result.Message);
+                }
+
+                return Ok(result.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPost("updatequiz")]
+        public ActionResult UpdateQuiz(Quiz quiz)
+        {
+            try
+            {
+                var result = _quizService.UpdateQuiz(quiz);
+                if (!result.Success)
+                {
+                    return BadRequest(result.Message);
+                }
+
+                return Ok(result.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

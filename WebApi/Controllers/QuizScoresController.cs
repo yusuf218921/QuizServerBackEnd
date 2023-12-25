@@ -1,5 +1,6 @@
 ﻿using Business.Abstracts;
 using Core.Utilities.Result;
+using Entities.Concretes;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -50,6 +51,30 @@ namespace WebApi.Controllers
             }
 
             return Ok(result.Data);
+        }
+
+        [HttpPost("addquizscore")]
+        public ActionResult AddQuizScore(QuizScore quizScore)
+        {
+            var result = _quizScoreService.AddQuizScore(quizScore);
+            if (!result.Success)
+            {
+                return BadRequest(result.Message);
+            }
+
+            return Ok(result.Message);
+        }
+
+        [HttpPost("updatequizscore")]
+        public ActionResult UpdateQuizScore(QuizScore quizScore)
+        {
+            var result = _quizScoreService.UpdateQuizScore(quizScore);
+            if (!result.Success)
+            {
+                return BadRequest(result.Message);
+            }
+
+            return Ok(result.Message);
         }
     }
 }

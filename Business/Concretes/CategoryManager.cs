@@ -1,4 +1,5 @@
 ﻿using Business.Abstracts;
+using Business.BusinessAspects.Autofac;
 using Core.Utilities.Result;
 using Core.Utilities.Results;
 using DataAccess.Abstracts;
@@ -19,6 +20,20 @@ namespace Business.Concretes
         {
             _categoryDal = categoryDal;
         }
+        [SecuredOperation("admin")]
+        public IResult AddCategory(Category category)
+        {
+            _categoryDal.Add(category);
+            return new SuccessResult();
+        }
+
+        [SecuredOperation("admin")]
+        public IResult DeleteCategory(Category category)
+        {
+            _categoryDal.Delete(category);
+            return new SuccessResult();
+        }
+
         public IDataResult<List<Category>> GetAllCategory()
         {
             return new SuccessDataResult<List<Category>>(_categoryDal.GetAll().ToList());
@@ -27,6 +42,12 @@ namespace Business.Concretes
         public IDataResult<Category> GetCategory(int id)
         {
             return new SuccessDataResult<Category>(_categoryDal.Get(c => c.CategoryID == id));
+        }
+        [SecuredOperation("admin")]
+        public IResult UpdateCategory(Category category)
+        {
+            _categoryDal.Update(category);
+            return new SuccessResult();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Business.Abstracts;
 using Core.Utilities.Result;
+using Entities.Concretes;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -27,6 +28,7 @@ namespace WebApi.Controllers
 
             return Ok(result.Data);
         }
+
         [HttpGet("getquestiondtos")]
         public ActionResult GetQuestionDto(int quizId)
         {
@@ -37,6 +39,60 @@ namespace WebApi.Controllers
             }
 
             return Ok(result.Data);
+        }
+
+        [HttpPost("addquestion")]
+        public ActionResult AddQuestion(Question question)
+        {
+            try
+            {
+                var result = _questionService.AddQuestion(question);
+                if (!result.Success)
+                {
+                    return BadRequest(result.Message);
+                }
+                return Ok(result.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPost("deletequestion")]
+        public ActionResult DeleteQuestion(Question question)
+        {
+            try
+            {
+                var result = _questionService.DeleteQuestion(question);
+                if (!result.Success)
+                {
+                    return BadRequest(result.Message);
+                }
+                return Ok(result.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPost("updatequestion")]
+        public ActionResult UpdateQuestion(Question question)
+        {
+            try
+            {
+                var result = _questionService.UpdateQuestion(question);
+                if (!result.Success)
+                {
+                    return BadRequest(result.Message);
+                }
+                return Ok(result.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

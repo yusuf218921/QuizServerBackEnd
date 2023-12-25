@@ -1,4 +1,5 @@
 ﻿using Business.Abstracts;
+using Entities.Concretes;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,6 +15,7 @@ namespace WebApi.Controllers
         {
             _optionService = optionService;
         }
+
         [HttpGet("getquestionoptions")]
         public ActionResult GetOptions(int questionId)
         {
@@ -24,6 +26,60 @@ namespace WebApi.Controllers
             }
 
             return Ok(result.Data);
+        }
+
+        [HttpPost("addoption")]
+        public ActionResult AddOption(Option option)
+        {
+            try
+            {
+                var result = _optionService.AddOption(option);
+                if (!result.Success)
+                {
+                    return BadRequest(result.Message);
+                }
+                return Ok(result.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPost("deleteoption")]
+        public ActionResult DeleteOption(Option option)
+        {
+            try
+            {
+                var result = _optionService.DeleteOption(option);
+                if (!result.Success)
+                {
+                    return BadRequest(result.Message);
+                }
+                return Ok(result.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPost("updateoption")]
+        public ActionResult UpdateOption(Option option)
+        {
+            try
+            {
+                var result = _optionService.UpdateOption(option);
+                if (!result.Success)
+                {
+                    return BadRequest(result.Message);
+                }
+                return Ok(result.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

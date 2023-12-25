@@ -1,4 +1,5 @@
 ﻿using Business.Abstracts;
+using Business.BusinessAspects.Autofac;
 using Core.Utilities.Result;
 using Core.Utilities.Results;
 using DataAccess.Abstracts;
@@ -19,6 +20,18 @@ namespace Business.Concretes
         {
             _questionDal = questionDal;
         }
+        [SecuredOperation("admin")]
+        public IResult AddQuestion(Question question)
+        {
+            _questionDal.Add(question);
+            return new SuccessResult();
+        }
+        [SecuredOperation("admin")]
+        public IResult DeleteQuestion(Question question)
+        {
+            _questionDal.Delete(question);
+            return new SuccessResult();
+        }
 
         public IDataResult<List<QuestionDto>> GetQuizQuestionDto(int quizId)
         {
@@ -29,6 +42,11 @@ namespace Business.Concretes
         {
             return new SuccessDataResult<List<Question>>(_questionDal.GetAll(q => q.QuizID == quizId).ToList());
         }
-
+        [SecuredOperation("admin")]
+        public IResult UpdateQuestion(Question question)
+        {
+            _questionDal.Update(question);
+            return new SuccessResult();
+        }
     }
 }
