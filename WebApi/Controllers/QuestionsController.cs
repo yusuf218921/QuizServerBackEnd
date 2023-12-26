@@ -17,6 +17,18 @@ namespace WebApi.Controllers
             _questionService = questionService;
         }
 
+        [HttpGet("getallquestions")]
+        public ActionResult GetAllQuestions()
+        {
+            var result = _questionService.GetAllQuestions();
+            if (!result.Success)
+            {
+                return BadRequest(result.Message);
+            }
+
+            return Ok(result.Data);
+        }
+
         [HttpGet("getquestions")]
         public ActionResult GetQuestions(int quizId) 
         {

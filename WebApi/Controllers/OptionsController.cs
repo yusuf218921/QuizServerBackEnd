@@ -72,7 +72,7 @@ namespace WebApi.Controllers
                 var result = _optionService.UpdateOption(option);
                 if (!result.Success)
                 {
-                    return BadRequest(result);
+                    return BadRequest(result.Message);
                 }
                 return Ok(result.Message);
             }

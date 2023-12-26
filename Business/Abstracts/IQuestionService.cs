@@ -12,6 +12,7 @@ namespace Business.Abstracts
     // Quistion Servisleri
     public interface IQuestionService
     {
+        IDataResult<List<Question>> GetAllQuestions();
         IResult AddQuestion(Question question);
         IResult DeleteQuestion(Question question);
         IResult UpdateQuestion(Question question);
