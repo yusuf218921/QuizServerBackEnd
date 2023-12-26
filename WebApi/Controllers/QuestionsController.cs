@@ -51,7 +51,7 @@ namespace WebApi.Controllers
                 {
                     return BadRequest(result.Message);
                 }
-                return Ok(result.Message);
+                return Ok(result);
             }
             catch (Exception ex)
             {
@@ -69,7 +69,7 @@ namespace WebApi.Controllers
                 {
                     return BadRequest(result.Message);
                 }
-                return Ok(result.Message);
+                return Ok(result);
             }
             catch (Exception ex)
             {
@@ -87,7 +87,7 @@ namespace WebApi.Controllers
                 {
                     return BadRequest(result.Message);
                 }
-                return Ok(result.Message);
+                return Ok(result);
             }
             catch (Exception ex)
             {

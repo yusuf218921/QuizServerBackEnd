@@ -88,10 +88,10 @@ namespace WebApi.Controllers
                 var result = _quizService.AddQuiz(quiz);
                 if (!result.Success)
                 {
-                    return BadRequest(result.Message);
+                    return BadRequest(result);
                 }
 
-                return Ok(result.Message);
+                return Ok(result);
             }catch(Exception ex)
             {
                 return BadRequest(ex.Message);
@@ -107,10 +107,10 @@ namespace WebApi.Controllers
                 var result = _quizService.DeleteQuiz(quiz);
                 if (!result.Success)
                 {
-                    return BadRequest(result.Message);
+                    return BadRequest(result);
                 }
 
-                return Ok(result.Message);
+                return Ok(result);
             }
             catch (Exception ex)
             {
@@ -126,10 +126,10 @@ namespace WebApi.Controllers
                 var result = _quizService.UpdateQuiz(quiz);
                 if (!result.Success)
                 {
-                    return BadRequest(result.Message);
+                    return BadRequest(result);
                 }
 
-                return Ok(result.Message);
+                return Ok(result);
             }
             catch (Exception ex)
             {

@@ -24,14 +24,14 @@ namespace Business.Concretes
         public IResult AddCategory(Category category)
         {
             _categoryDal.Add(category);
-            return new SuccessResult();
+            return new SuccessResult("Yeni Kategori Eklendi");
         }
 
         [SecuredOperation("admin")]
         public IResult DeleteCategory(Category category)
         {
             _categoryDal.Delete(category);
-            return new SuccessResult();
+            return new SuccessResult("Kategori Silindi");
         }
 
         public IDataResult<List<Category>> GetAllCategory()
@@ -47,7 +47,7 @@ namespace Business.Concretes
         public IResult UpdateCategory(Category category)
         {
             _categoryDal.Update(category);
-            return new SuccessResult();
+            return new SuccessResult("Kategori Güncellendi");
         }
     }
 }

@@ -23,13 +23,13 @@ namespace Business.Concretes
         public IResult AddOption(Option option)
         {
             _optionDal.Add(option);
-            return new SuccessResult();
+            return new SuccessResult("Seçenek Eklendi");
         }
         [SecuredOperation("admin")]
         public IResult DeleteOption(Option option)
         {
             _optionDal.Delete(option);
-            return new SuccessResult();
+            return new SuccessResult("Seçenek Silindi");
         }
 
         public IDataResult<List<Option>> GetQuestionOptions(int questionId)
@@ -40,7 +40,7 @@ namespace Business.Concretes
         public IResult UpdateOption(Option option)
         {
             _optionDal.Update(option);
-            return new SuccessResult();
+            return new SuccessResult("Seçenek Güncellendi");
         }
     }
 }

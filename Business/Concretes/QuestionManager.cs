@@ -24,13 +24,13 @@ namespace Business.Concretes
         public IResult AddQuestion(Question question)
         {
             _questionDal.Add(question);
-            return new SuccessResult();
+            return new SuccessResult("Soru Eklendi");
         }
         [SecuredOperation("admin")]
         public IResult DeleteQuestion(Question question)
         {
             _questionDal.Delete(question);
-            return new SuccessResult();
+            return new SuccessResult("Soru silindi");
         }
 
         public IDataResult<List<QuestionDto>> GetQuizQuestionDto(int quizId)
@@ -46,7 +46,7 @@ namespace Business.Concretes
         public IResult UpdateQuestion(Question question)
         {
             _questionDal.Update(question);
-            return new SuccessResult();
+            return new SuccessResult("Soru Güncellendi");
         }
     }
 }

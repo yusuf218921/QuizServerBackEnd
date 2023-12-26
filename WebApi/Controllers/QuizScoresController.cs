@@ -62,7 +62,7 @@ namespace WebApi.Controllers
                 return BadRequest(result.Message);
             }
 
-            return Ok(result.Message);
+            return Ok(result);
         }
 
         [HttpPost("updatequizscore")]
@@ -74,7 +74,7 @@ namespace WebApi.Controllers
                 return BadRequest(result.Message);
             }
 
-            return Ok(result.Message);
+            return Ok(result);
         }
     }
 }
